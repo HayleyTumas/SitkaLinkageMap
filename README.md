@@ -1,5 +1,6 @@
 # SitkaLinkageMap
 Code and accompanying datasets for analyses in Tumas et al. 202X
+
 NOTE: Coding was either completed in Ubuntu for windows using miniconda through Anaconda3 or in R v4.02 using R Studio. LepMap3 v0.2 (4 Dec 2020) (downloaded from SourceForge: https://sourceforge.net/p/lep-map3/wiki/LM3%20Home/) was used to make all final maps that used family 2 for grouping during Separate Chromosomes. Other previous maps that did not use family 2 for grouping would have used the previous version of LepMap3 that does not have this capability. This shows the steps to achieve the maps that were used in the manuscript. Other maps were made, either before proper QC, before we knew to use LM2 during Separate Chromosomes, or individual family maps in RAD-Seq or Chip datasets. Code is in parentheses and output datafiles or directories are in brackets. 
 A.	RAD-Seq data
 1.	Data (Filter_032020) handed over by Joanna Ilska Warner (code notebook for steps)[ fam1_qcedSNPs.recode.vcf and fam3_qcedSNPs.recode.vcf].
