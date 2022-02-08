@@ -1,0 +1,5 @@
+This folder contains code to convert GenomeStudio files to vcf files and filter those files for linkage mapping (Filter folder).
+This was run on the raw genotype data produced by the SNP Chip which is only available upon request. 
+The folder also contains bash scripts for developing a linkage map in LepMap3. 
+LepMap3 code was run on a vcf of the filtered SNP Chip genotypes. A SNP table of these genotypes 
+and code on how to convert the table to a vcf for LepMap3 is available in a Dryad repository that accompanies this publication. 
