@@ -1,24 +1,24 @@
 # SitkaLinkageMap
 Code and accompanying datasets for analyses in Tumas et al. 202X
 
-NOTE: Coding was either completed in Ubuntu for windows using miniconda through Anaconda3 or in R v4.02 using R Studio. LepMap3 v0.2 (4 Dec 2020) (downloaded from SourceForge: https://sourceforge.net/p/lep-map3/wiki/LM3%20Home/) was used to make all final maps that used family 2 for grouping during Separate Chromosomes. Other previous maps that did not use family 2 for grouping would have used the previous version of LepMap3 that does not have this capability. This shows the steps to achieve the maps that were used in the manuscript. 
+NOTE: Coding was either completed in Ubuntu for windows using miniconda through Anaconda3 or in R v4.02 using R Studio. LepMap3 v0.2 (4 Dec 2020) (downloaded from SourceForge: https://sourceforge.net/p/lep-map3/wiki/LM3%20Home/) was used to make all final maps that used family 2 for grouping during Separate Chromosomes. Other previous maps that did not use family 2 for grouping would have used the previous version of LepMap3 that does not have this capability. This shows the steps to achieve the maps that were used in the manuscript. Steps follow the Methods section of the accompanying 
 
-1.	RAD-Seq Map: 
-RAR-Seq data used in this study was from a previous study (Ilska et al. 202X). The data was futher filtered for this study following the provided Data Prep code to get a single SNP per locus. The data that was further filtered was then used in LepMap3 to develop a linkage map using the provided code. The genotype data used to develop the linkage map is available in a Dryad repository accompanying this manuscript. The data is formatted in a SNP table with code to convert to vcf format for use in LepMap3. 
-
-2. SNP Chip Map: 
+1. SNP_Chip: 
 The data for this map was produced as part of this study using an Illumina SNP chip devleoped as part of this study. More information on the SNP chip can be found in the accompanying publication and on the Dryad repository. Initial datasets were excel files produced from SNP calling in GenomeStudio. The code in this folder converts GenomeStudio files to vcf files and filter for MAF and missigness (files in Filter folder). Filtered data is available in a SNP table on Dryad. Code to develop the map from this data in LepMap3 is also in this folder. 
 
-3. RAD-Chip Map: 
+2.	RAD-Seq Map: 
+RAR-Seq data used in this study was from a previous study (Ilska et al. 202X). The data was futher filtered for this study following the provided Data Prep code to get a single SNP per locus. The data that was further filtered was then used in LepMap3 to develop a linkage map using the provided code. The genotype data used to develop the linkage map is available in a Dryad repository accompanying this manuscript. The data is formatted in a SNP table with code to convert to vcf format for use in LepMap3. 
+
+3. RAD_Chip: 
 A map was created that used both the RAD-Seq and SNP Chip genotypes. Both types of genotype data were only available for a subset of individuals, so the RAD-Seq and SNP Chip vcf files were subset accordingly. Code for subsetting and preparing this combined dataset is in this folder (Data Prep). A linkage map was developed for each of the two linkage mapping families and the two families combined (LepMap3 bash scripts in a folder for each map). Problem markers were identified that continually did not have synteny between component maps or caused gaps in chromosomes using the Problem Markers code. These markers were removed and a finalized map was developed using the LepMap3 code in the Remove Probs folder. A SNP table with the genotypes used in the finalized map, after problem markers had been removed, is on Dryad as is the finalized map. 
 
-4. Map Comparisons: 
+4. Map_Comparisons: 
 Map validation was performed by visually and statistically comparing marker grouping and positioning among the finalized map and all component maps (RAD-Seq map, SNP Chip map, and individual family maps). Map files and code to complete these comparisons is in this folder. 
 
-5. Species Comparisons: 
+5. Species_Comparisons: 
 The finalized map was compared to different species for further validation and data exploration. As all SNP Chip SNPs were discovered within white spruce transcriptome sequences (GCAT), RAD-Seq SNP sequences were first blasted against the white spruce transcriptome. This provided a basis for comparison with the white spruce map (Pavy et al. 2017) which places markers also discovered in white spruce transcriptome sequences, but also created a database to blast against other species map sequences. This was also used to determine if 2 or more SNPs that were on the same GCAT sequence mapped to the same position. Code for this is in the RADSeq_GCAT folder. All mapped GCAT sequences were blasted against the Sitka spruce genome to validate the map, determining if any SNPs that mapped to the same scaffold mapped to the same linkage group (chromosome) (SSGenome folder). Then all mapped GCAT sequences were blasted against mapped Norway spruce genome sequences (NowarySpruce folder) and mapped limber pine transcriptome sequences (LimberPine). Visual and statistical comparisions of map synteny between Sitka spruce and white spruce, Norway spruce, and limber pine was made using the Compare_Sitka_toSpecies.R code. NOTE: Data for the blasts are not available here, but sources are indicated in the code. 
 
-6. Integrated Map: 
+6. Integrated_Map: 
 A map that integrated the Sitka and white spruce maps was created using LPMerge in R. The finalized Sitka spruce map and white spruce map from Pavy et al. 2017 were filtered to remove any markers that showed a high level of disagreement between the two maps (i.e. different positions based on Cook's distance or different chromosomes). The Sitka spruce map was further filtered for one SNP per GCAT sequence, preferentially selecting SNP Chip SNPs. Code for this and map integration is all in a single file in this folder. The white spruce map is available from Pavy et al. 2017 (https://doi.org/10.1111/tpj.13478). Other files used to filter both maps are in the Species Comparisons/RADSeq_GCAT folder. The finalized integrated map is in the accompanying Dryad repository. 
 
 Raw data is not available for this code, but all data used for map developement is available in the accompanying Dryad repository. Please contact the corresponding author, Hayley Tumas (hayley.tumas@ubc.ca) for questions regarding data availability or coding issues. 
