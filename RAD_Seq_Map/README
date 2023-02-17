@@ -1,0 +1,3 @@
+This folder contains code filter RADSeq data form linkgae mapping and develop a linkage map in LepMap3.
+A SNP table of genotypes and code on how to convert the table to a vcf for LepMap3 is available in a Dryad repository that accompanies this publication. 
+If using the files from Dryad, begin at the Data Convert file.
