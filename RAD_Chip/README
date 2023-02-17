@@ -1,0 +1,7 @@
+This folder contains bash scripts for developing a linkage map in LepMap3 from a file that combines RAD Seq and SNP Chip genotype data. 
+A SNP table of these genotypes and code on how to convert the table to a vcf for LepMap3 is available in a Dryad repository that accompanies 
+this publication. Individual SNP Chip and RAD Seq files also exist and individual folders on how to make those maps. Begin at the Data_Convert file
+and follow the LepMap3 wiki for guidance (https://sourceforge.net/p/lep-map3/wiki/LM3%20Home/).
+Code exists for making maps for each of the two full-sib families and a map that combines the families, using family 2 to inform the separate chromosome
+step. Code and data also shows how the map was then filtered for markers that disagreed between component maps (see publication) and code to make the
+map again without these "Problem Markers". 
